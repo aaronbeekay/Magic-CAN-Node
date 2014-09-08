@@ -1,0 +1,11 @@
+Magic CAN Node - changelog
+
+r01
+(initial draft)
+
+r02 - 2014-02-10
+- Fix incorrect drill size for X4.
+- Add mating connectors and terminals as BOM entries in schematic (instead of manually adding later).
+- Invert 12V switching to avoid glitch on processor startup
+- Update TI component packages (IC5, IC6) to DBV package to match stocked components
+- FIXME: Replace unsourceable ESD protection arrays IC7, IC2
