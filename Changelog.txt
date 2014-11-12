@@ -9,3 +9,17 @@ r02 - 2014-02-10
 - Invert 12V switching to avoid glitch on processor startup
 - Update TI component packages (IC5, IC6) to DBV package to match stocked components
 - FIXME: Replace unsourceable ESD protection arrays IC7, IC2
+
+VERSION NUMBERING UPDATE - November 2014
+r02 is now v1.0.1.
+
+v.2.0 - in progress
+- Redesign analog sensor input filter circuit to reflect new sensor measurement strategy:
+	* Analog filter on each channel is an RC anti-aliasing filter with f_3dB = 5 kHz
+	* Add option for differential-mode analog inputs (AINx to AIN-)
+
+- Change 12V-3V3 power supply: use circuit from Battery Interface Module r02 (v.1.0.1) because TPS560200-based circuit from Magic CAN Node v.1.0.1 was unsourceable
+- Remove ESD protection diode arrays
+- Remove switched +12V output and associated circuit
+- Change CAN connectors: remove AMPSEAL CAN connectors, replace with Micro-Fit 6pin
+- Change JTAG header to 0.05" pitch
