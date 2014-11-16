@@ -1,0 +1,26 @@
+Options for active filtering of analog inputs on MCN v2
+
+1. Per-channel active filters
+	- because of cost and board space concerns, anti-aliasing filter order is limited
+	- seems practical to implement 2-order Butterworth (=24 op-amps, 6x TSSOP-16 packages)
+
+2. External ADC
+	- options:
+		- TI ADS7953
+			- 12-bit, 12- or 16-channel
+			- has mux breakout for filtering
+			- http://www.ti.com/lit/ds/symlink/ads7953-q1.pdf
+		- TI ADS1158
+			- 16-bit
+			- 16-channel
+			- http://www.ti.com/product/ads1158
+			- SPI interface
+		
+3. External mux
+	- two 12-channel muxes: still use the C2000 internal mux, but switch a "nice" signal conditioning filter inline into the channel of interest
+	- options:
+		- TI CD4067B
+			- http://www.ti.com/product/cd4067b
+			
+FILTER DESIGN IDEAS
+- cheater chip: http://www.ti.com/lit/ds/symlink/uaf42.pdf
