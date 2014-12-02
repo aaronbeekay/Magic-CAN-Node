@@ -23,3 +23,5 @@ v.2.0 - in progress
 - Remove switched +12V output and associated circuit
 - Change CAN connectors: remove AMPSEAL CAN connectors, replace with Micro-Fit 6pin
 - Change JTAG header to 0.05" pitch
+- Remove 'CAN_RESET' button
+- Add '+3V3 OK' and '+12V OK' indicator LEDs
