@@ -28,3 +28,4 @@ r02 is now v1.0.1.
 # v2.1 - 2015-03-23
 - Replace CAN transceiver (ISO1050) with replacement (SN65HVD1050), for standardization
 - Add 100k pulldowns to analog inputs.
+- Tie VREFHI to +3V3 to enable ratiometric analog measurements.
