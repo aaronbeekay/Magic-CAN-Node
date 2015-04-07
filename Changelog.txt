@@ -1,9 +1,9 @@
 Magic CAN Node - changelog
 
-r01
+# v1.0.0 (r01)
 (initial draft)
 
-r02 - 2014-02-10
+# v1.0.1 (r02) - 2014-02-10
 - Fix incorrect drill size for X4.
 - Add mating connectors and terminals as BOM entries in schematic (instead of manually adding later).
 - Invert 12V switching to avoid glitch on processor startup
@@ -13,11 +13,10 @@ r02 - 2014-02-10
 VERSION NUMBERING UPDATE - November 2014
 r02 is now v1.0.1.
 
-v.2.0 - in progress
+# v.2.0 - 2014-12-04
 - Redesign analog sensor input filter circuit to reflect new sensor measurement strategy:
 	* Analog filter on each channel is an RC anti-aliasing filter with f_3dB = 5 kHz
 	* Add option for differential-mode analog inputs (AINx to AIN-)
-
 - Change 12V-3V3 power supply: use circuit from Battery Interface Module r02 (v.1.0.1) because TPS560200-based circuit from Magic CAN Node v.1.0.1 was unsourceable
 - Remove ESD protection diode arrays
 - Remove switched +12V output and associated circuit
@@ -25,3 +24,8 @@ v.2.0 - in progress
 - Change JTAG header to 0.05" pitch
 - Remove 'CAN_RESET' button
 - Add '+3V3 OK' and '+12V OK' indicator LEDs
+
+# v2.1 - 2015-03-23
+- Replace CAN transceiver (ISO1050) with replacement (SN65HVD1050), for standardization
+- Add 100k pulldowns to analog inputs.
+- Tie VREFHI to +3V3 to enable ratiometric analog measurements.

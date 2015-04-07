@@ -1,0 +1,216 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7672,        206]
+NotebookOptionsPosition[      7185,        185]
+NotebookOutlinePosition[      7546,        201]
+CellTagsIndexPosition[      7503,        198]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"Accuracy", " ", "of", " ", "Magic", " ", "CAN", " ", "Node"}], 
+   " ", "+", 
+   RowBox[{"5", "V", " ", "rail"}], " ", "-", " ", 
+   RowBox[{"provided", " ", "by", " ", "LMR14206"}]}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.6304417369386387`*^9, 3.6304417514813843`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Voltage", " ", "equation", " ", "provided", " ", "by", " ", "TI"}], " ", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Vout", " ", ":=", " ", 
+    RowBox[{"Vfb", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "+", " ", 
+       FractionBox["R1", "R2"]}], ")"}]}]}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.630441759059393*^9, 3.630441762265637*^9}, {
+  3.6304417923016367`*^9, 3.630441848983581*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"From", " ", "LMR14206", " ", "datasheet"}], " ", "-", " ", 
+    "SNVS733D"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"VfbMin", " ", "=", " ", "0.747"}], ";"}], " ", 
+   RowBox[{"(*", " ", "V", " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"VfbMax", " ", "=", " ", "0.782"}], ";"}], " ", 
+   RowBox[{"(*", " ", "V", " ", "*)"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"From", " ", "MCN", " ", "v2", ".0", ".0"}], "-", 
+     RowBox[{"beta2", " ", "schematic"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"NOTE", " ", "-", " ", 
+     RowBox[{
+     "these", " ", "do", " ", "not", " ", "take", " ", "into", " ", "account",
+       " ", "temperature", " ", "dependence"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"R1Min", " ", "=", " ", 
+     RowBox[{"5600", "*", "0.99"}]}], ";", " ", 
+    RowBox[{"(*", " ", "ohm", " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"R1Max", " ", "=", " ", 
+     RowBox[{"5600", "*", "1.01"}]}], ";", " ", 
+    RowBox[{"(*", " ", "ohm", " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"R2Min", " ", "=", " ", 
+     RowBox[{"1000", "*", "0.99"}]}], ";", " ", 
+    RowBox[{"(*", " ", "ohm", " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"R2Max", " ", "=", " ", 
+     RowBox[{"1000", "*", "1.01"}]}], ";", " ", 
+    RowBox[{"(*", " ", "ohm", " ", "*)"}], 
+    "\[IndentingNewLine]"}]}]}]], "Input",
+ CellChangeTimes->{{3.630442270073308*^9, 3.630442375795373*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"maxResult", " ", "=", " ", 
+   RowBox[{"FindMaximum", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Vout", ",", " ", "\[IndentingNewLine]", 
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+         "VfbMin", " ", "\[LessEqual]", " ", "Vfb", " ", "\[LessEqual]", " ", 
+          "VfbMax"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+         "R1Min", " ", "\[LessEqual]", " ", "R1", " ", "\[LessEqual]", " ", 
+          "R1Max"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"R2Min", "\[LessEqual]", "R2", "\[LessEqual]", "R2Max"}]}], 
+        "}"}]}], "\[IndentingNewLine]", "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Vfb", ",", "R1", ",", "R2"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"minResult", " ", "=", " ", 
+   RowBox[{"FindMinimum", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Vout", ",", " ", "\[IndentingNewLine]", 
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+         "VfbMin", " ", "\[LessEqual]", " ", "Vfb", " ", "\[LessEqual]", " ", 
+          "VfbMax"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+         "R1Min", " ", "\[LessEqual]", " ", "R1", " ", "\[LessEqual]", " ", 
+          "R1Max"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"R2Min", "\[LessEqual]", "R2", "\[LessEqual]", "R2Max"}]}], 
+        "}"}]}], "\[IndentingNewLine]", "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Vfb", ",", "R1", ",", "R2"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Labeled", "[", 
+  RowBox[{
+   RowBox[{"minResult", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], ",", "\"\<Minimum voltage: \>\"", " ", 
+   ",", "Left"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Labeled", "[", 
+  RowBox[{
+   RowBox[{"maxResult", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], ",", "\"\<Maximum voltage: \>\"", " ", 
+   ",", "Left"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6304419472319727`*^9, 3.630441964244219*^9}, {
+  3.630442003451933*^9, 3.630442006713004*^9}, {3.6304420402086897`*^9, 
+  3.63044214311579*^9}, {3.630442214576627*^9, 3.630442227921352*^9}, {
+  3.630442384830946*^9, 3.63044242815548*^9}, {3.6304424955030212`*^9, 
+  3.630442854797236*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"4.84736543897236`","\"Minimum voltage: \""},
+  "Labeled",
+  DisplayFunction->(GridBox[{{
+      ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"], 
+      TagBox[
+       ItemBox[
+        PaneBox[
+         TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+         BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+       "SkipImageSizeLevel"]}}, 
+    GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+    AutoDelete -> False, 
+    GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+    BaselinePosition -> {1, 2}]& ),
+  InterpretationFunction->(RowBox[{"Labeled", "[", 
+     RowBox[{#, ",", #2, ",", "Left"}], "]"}]& )]], "Output",
+ CellChangeTimes->{{3.6304422204871187`*^9, 3.63044222820745*^9}, {
+  3.630442429025197*^9, 3.630442431847921*^9}, {3.630442732719283*^9, 
+  3.630442750409698*^9}, {3.6304427872453337`*^9, 3.6304428551776943`*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"5.249667792446726`","\"Maximum voltage: \""},
+  "Labeled",
+  DisplayFunction->(GridBox[{{
+      ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"], 
+      TagBox[
+       ItemBox[
+        PaneBox[
+         TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+         BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+       "SkipImageSizeLevel"]}}, 
+    GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+    AutoDelete -> False, 
+    GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+    BaselinePosition -> {1, 2}]& ),
+  InterpretationFunction->(RowBox[{"Labeled", "[", 
+     RowBox[{#, ",", #2, ",", "Left"}], "]"}]& )]], "Output",
+ CellChangeTimes->{{3.6304422204871187`*^9, 3.63044222820745*^9}, {
+  3.630442429025197*^9, 3.630442431847921*^9}, {3.630442732719283*^9, 
+  3.630442750409698*^9}, {3.6304427872453337`*^9, 3.630442855181671*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 755},
+WindowMargins->{{-765, Automatic}, {Automatic, -148}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 335, 7, 28, "Input"],
+Cell[895, 29, 477, 13, 66, "Input"],
+Cell[1375, 44, 1635, 39, 199, "Input"],
+Cell[CellGroupData[{
+Cell[3035, 87, 2237, 53, 250, "Input"],
+Cell[5275, 142, 946, 19, 31, "Output"],
+Cell[6224, 163, 945, 19, 31, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
