@@ -29,3 +29,9 @@ r02 is now v1.0.1.
 - Replace CAN transceiver (ISO1050) with replacement (SN65HVD1050), for standardization
 - Add 100k pulldowns to analog inputs.
 - Tie VREFHI to +3V3 to enable ratiometric analog measurements.
+
+# v2.2 - 2015-12-xx
+- Add GPIO input filter circuit to general-purpose inputs.
+- Add blind-mate input header, X4, to enable usage as daughtercard (no wire-to-board connections).
+- Change CAN transceiver level-shifting diode, D5, from 3V to 3.3V to reduce unique part count.
+- Fix LED resistor values and change components accordingly.
