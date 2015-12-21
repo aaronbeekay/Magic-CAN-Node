@@ -5,3 +5,4 @@ Gerbers/panel.cfg
 Gerbers/panel.layout
 Gerbers/placement.merge-.txt
 Gerbers/toollist.merge-.drl
+*_UpdatePartNumAttributes.scr
