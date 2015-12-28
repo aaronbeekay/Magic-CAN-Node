@@ -1,0 +1,11 @@
+Qty,Description,Category,Manufacturer,Mfg part,Vendor,Vendor Part,Cost,Part References
+1,"Header, Male pin, .1"", 1-row, 20 pos, breakable (Short Pins)",Connectors,FCI,68000-236HLF,DK,609-3465-ND,1.44,"SV2, SV3"
+1,"Micro-Fit header, 6pos, RA, SMD, with solder tabs",Connectors,Molex,43045-0609,DK,WM1827CT-ND,3.2,X7
+1,"MicroClasp plug, 20pos, dual row",Connectors,Molex,51353-2000,DK,WM3363-ND,0.73,X1
+1,"0.1"" Male Header - 2 rows, 14 positions (TI JTAG) - Through Hole, Vertical",Connectors,FCI,67996-114HLF,DK,609-3491-ND,0.75,SV1
+1,"BNC jack, 50 ohm, PCB mount, right-angle",Connectors,Molex,73171-4230,DK,WM5281-ND,1.61,X6
+1,"DE-9 (DB-9) receptacle, 9 positions, PCB mount, right-angle",Connectors,TE Connectivity,1734354-1,DK,A35107-ND,1.43,X8
+1,"Male pin header, 2x3pos, 2mm pitch, selective gold plated",Connectors,Harwin,M22-2520305,DK,952-1318-ND,0.43,X2
+2,"Female pin header, 10 pos, 2mm pitch, selective gold plated",Connectors,Harwin,M22-7131042,DK,952-1354-5-ND,1.49,"X10, X11"
+1,"Binding post, insulated, red, 6-32 stud size",Connectors,Cinch Connectivity,111-0702-001,DK,J10125-ND,4.05,X5
+1,"Binding post, insulated, black, 6-32 stud size",Connectors,Cinch Connectivity ,111-0703-001,DK,J10126-ND,4.05,X4
